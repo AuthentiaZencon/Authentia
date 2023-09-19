@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id        Int      @id @default(autoincrement())
+    email     String   @unique
+    name      String?
+    password  String
+    country   String
+    city      String
+    phone     String
+    sector    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    posts             Post[]     @relation("author")
+    sellerContracts   Contract[] @relation("seller")
+    customerContracts Contract[] @relation("customer")
+}
+
+model Post {
+    id        Int      @id @default(autoincrement())
+    title     String
+    content   String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    authorId  Int
+    author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade, name: "author")
+
+    @@index([authorId])
+}
+
+model Contract {
+    id         Int      @id @default(autoincrement())
+    contractId String
+    sellerId   Int
+    seller     User     @relation(fields: [sellerId], references: [id], onDelete: Cascade, name: "seller")
+    customerId Int
+    customer   User     @relation(fields: [customerId], references: [id], onDelete: Cascade, name: "customer")
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+}
