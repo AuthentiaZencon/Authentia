@@ -3,6 +3,8 @@ import React from 'react';
 import { useState} from 'react';
 import Link from 'next/link'
 
+import { ImageGrid } from '../Components/ImageGridLogin/ImageGrid';
+
 import { GeneralNavbar } from '../Components/GeneralNavbar/GeneralNavbar';
 // import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
@@ -18,16 +20,11 @@ const Login = () => {
 
         <>
 
-            <main className="w-full  h-full flex justify-between items-center">
+            <main className="w-full  h-full flex sm:flex-row flex-col justify-between items-center">
 
+                <ImageGrid  />
 
-                <section className='bg-slate-700 grid w-2/6 h-full'>
-
-                    <img src='Images/ZenconLogo.svg' className="sm:h-[25rem]  md:h-[30rem] md:w-[30rem] h-[15rem] sm:w-[15rem] w-[15rem]" alt="" />
-
-                </section>
-
-                <section className='bg-slate-500 flex flex-col w-4/6 h-full'>
+                <section className='bg-slate-500 flex flex-col w-9/12 h-full'>
                     <nav className="py-4 px-5 flex gap-2 justify-end items-end h-fit w-fit overflow-y-hidden">
                     
                                     {navbarLinks.map((link, index) => (
@@ -48,7 +45,7 @@ const Login = () => {
 
 
                     <div className="h-full w-[95%]  max-w-[320px] min-[320px]:max-w-full sm:max-w-6xl flex flex-col md:flex-row justify-center space-y-4 space-x-6 items-center">
-                        <div className="flex flex-row md:flex-col justify-start items-start">
+                        <div className="flex flex-row sm:flex-col justify-start items-start">
                             <h1 className="text-2xl text-center sm:text-left sm:text-7xl text-white">ola</h1>
                             <p className=" text-white sm:text-5xl text-center ">Come back later.</p>
 
@@ -59,8 +56,6 @@ const Login = () => {
                     </div>   
 
                 </section>
-
-
 
             </main>
         </>
