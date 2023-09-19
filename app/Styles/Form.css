@@ -1,0 +1,308 @@
+body {
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradiants {
+  margin: 0;
+
+  color: #fff;
+}
+
+.heading-line {
+  line-height: 1;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+
+.heading-line::before {
+  line-height: 1;
+  display: block;
+  position: absolute;
+  color: #fff;
+  pointer-events: none;
+  width: 100%;
+}
+
+.heading-line-gradient {
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* 1st heading gradient */
+@keyframes first_heading_gradient {
+  0%,
+  16.667% {
+    opacity: 1;
+  }
+
+  33.333%,
+  83.333% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 1st heading white text */
+@keyframes first_heading_white_text {
+  0%,
+  16.667% {
+    opacity: 0;
+  }
+
+  25%,
+  91.667% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes second_heading_gradient {
+  0%,
+  16.667% {
+    opacity: 0;
+  }
+
+  33.333%,
+  50% {
+    opacity: 1;
+  }
+
+  66.667%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes second_heading_white_text {
+  0%,
+  25% {
+    opacity: 1;
+  }
+
+  33.333%,
+  50% {
+    opacity: 0;
+  }
+
+  58.333%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes third_heading_gradient {
+  0%,
+  50% {
+    opacity: 0;
+  }
+
+  66.667%,
+  83.333% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes third_heading_white_text {
+  0%,
+  58.333% {
+    opacity: 1;
+  }
+
+  66.667%,
+  83.333% {
+    opacity: 0;
+  }
+
+  91.667%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.heading-line-first > .heading-line-gradient {
+  background-image: linear-gradient(to left, #ed8936, #ed64a6);
+  animation: first_heading_gradient 8s infinite;
+}
+
+.heading-line-first::before {
+  content: "Animated.";
+  animation: first_heading_white_text 8s infinite;
+}
+
+.heading-line-second > .heading-line-gradient {
+  background-image: linear-gradient(to left, #38b2ac, #0bc5ea);
+  animation: second_heading_gradient 8s infinite;
+}
+
+.heading-line-second::before {
+  content: "Gradient.";
+  animation: second_heading_white_text 8s infinite;
+}
+
+.heading-line-third > .heading-line-gradient {
+  background-image: linear-gradient(to left, #ecc94b, #48bb78);
+  animation: third_heading_gradient 8s infinite;
+}
+
+.heading-line-third::before {
+  content: "Text.";
+  animation: third_heading_white_text 8s infinite;
+}
+
+   .fusion-container {
+    position: relative;
+
+  }
+
+  .gradiant {
+    background-image: linear-gradient(to left, #D0AE66, #9A364B);
+    background-size: 400%;
+    font-family: outfit;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 16s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+  
+  .contenedor-1,
+  .contenedor-2 {
+    position: absolute;
+
+    background-image: url('https://content.thecollective.in/uploads/2017/09/26102220/Main-740x560.jpeg');
+    background-repeat: no-repeat;
+    
+  }
+  
+  .contenedor-1 {
+    top: 0;
+    background-position: right top;
+
+    z-index: 1;
+  }
+  
+  .contenedor-2 {
+    background-size: cover;
+
+    background-position-y:-25px ;
+
+    left: 30px;
+    z-index: 2;
+  }
+  
+
+  .container {
+    width: 72rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box1 {
+    width: 100%;
+    height: 200px;
+    background-image: url("https://content.thecollective.in/uploads/2017/09/26102220/Main-740x560.jpeg");
+    background-size: cover;
+    background-position-y: -100px;
+
+
+  }
+  
+  .box2 {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+
+    background-image: url("https://content.thecollective.in/uploads/2017/09/26102220/Main-740x560.jpeg");
+    background-size: 400px;
+
+  }
+  
+
+  .div-con-notch {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #f1f1f1;
+    overflow: hidden;
+  }
+  
+  .notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contenido {
+    padding: 20px;
+  }
+  
+
+  .contenedor {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .rectangulo-grande {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  }
+  
+  .rectangulo-pequeno {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    mask: url(#rectangulo-mask);
+  }
+  
+  .mask-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
