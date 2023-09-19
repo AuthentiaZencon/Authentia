@@ -10,7 +10,7 @@ export const Navbar = () => {
     const navbarLinks = [
         { label: 'About', link: './../../Pages/About/' },
         { label: 'Services', link: '../../Pages/About/StillInProgress' },
-        { label: 'Login', link: '../../Pages/About/StillInProgress' },
+        { label: 'Login', link: '../../Pages/About/Login/page.tsx' },
     ]
     
 
