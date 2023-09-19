@@ -20,7 +20,7 @@ const Login = () => {
 
         <>
 
-            <main className="w-full  h-full flex justify-between items-center">
+            <main className="w-full  h-full flex sm:flex-row flex-col justify-between items-center">
 
                 <ImageGrid  />
 
@@ -45,7 +45,7 @@ const Login = () => {
 
 
                     <div className="h-full w-[95%]  max-w-[320px] min-[320px]:max-w-full sm:max-w-6xl flex flex-col md:flex-row justify-center space-y-4 space-x-6 items-center">
-                        <div className="flex flex-row md:flex-col justify-start items-start">
+                        <div className="flex flex-row sm:flex-col justify-start items-start">
                             <h1 className="text-2xl text-center sm:text-left sm:text-7xl text-white">ola</h1>
                             <p className=" text-white sm:text-5xl text-center ">Come back later.</p>
 
