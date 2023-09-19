@@ -6,10 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { useDropzone } from 'react-dropzone';
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
+import { trpc } from "@/app/_trpc/client";
 
 export default function UploadImage () {
 
     const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+    const addRegistration = trpc.addRegistration.useMutation()
 
     const imageMutation = useMutation({
         mutationFn: async (image: File) => {
@@ -26,13 +28,23 @@ export default function UploadImage () {
         onSettled: ( data ) => {
             if (!data) return
             const secure_url = data.secure_url
+            const dataToSend = {
+                ...registrationData,
+                url: secure_url
+            }
+            addRegistration.mutate(dataToSend)
         }
     })
 
     const [ image, setImage ] = useState<File|null>(null)
+    const [ registrationData, setRegistrationData ] = useState({
+        title: '',
+        author: '',
+        type: '',
+        description: ''
+    })
 
     const onDrop = useCallback((acceptedFiles: File[]) => {		
-		console.log(acceptedFiles)
         setImage(acceptedFiles[0])
 	}, [])
 
@@ -49,6 +61,7 @@ export default function UploadImage () {
         e.preventDefault()
         if (!image) return
         imageMutation.mutate(image)
+        console.log(registrationData)
     }
 
     return(
@@ -72,24 +85,40 @@ export default function UploadImage () {
 
                         <div>
                             <Label htmlFor="title">Asset title</Label>
-                            <Input name="title" placeholder="title" />
+                            <Input name="title" placeholder="title" 
+                                value={registrationData.title}
+                                onChange={(e) => setRegistrationData({ ...registrationData, title: e.target.value })}
+                                required
+                            />
                         </div>
 
                         <div className="flex flex-col gap-5 md:flex-row">
                             <div className="w-1/2">
                                 <Label htmlFor="author">Author</Label>
-                                <Input name="author" placeholder="image author" />
+                                <Input name="author" placeholder="image author" 
+                                    value={registrationData.author}
+                                    onChange={(e) => setRegistrationData({ ...registrationData, author: e.target.value })}
+                                    required
+                                />
                             </div>
 
                             <div className="w-1/2">
                                 <Label htmlFor="type">Type of image</Label>
-                                <Input name="type" placeholder="nature" />
+                                <Input name="type" placeholder="nature" 
+                                    value={registrationData.type}
+                                    onChange={(e) => setRegistrationData({ ...registrationData, type: e.target.value })}
+                                    required
+                                />
                             </div>
                         </div>
 
                         <div>
                             <Label htmlFor="description">Description</Label>
-                            <Textarea name="description" placeholder="description" rows={10}/>
+                            <Textarea name="description" placeholder="description" rows={10}
+                                value={registrationData.description}
+                                onChange={(e) => setRegistrationData({ ...registrationData, description: e.target.value })}
+                                required
+                            />
                         </div>
 
                         <div>
