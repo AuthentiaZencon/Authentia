@@ -3,6 +3,8 @@ import React from 'react';
 import { useState} from 'react';
 import Link from 'next/link'
 
+import { ImageGrid } from '../Components/ImageGridLogin/ImageGrid';
+
 import { GeneralNavbar } from '../Components/GeneralNavbar/GeneralNavbar';
 // import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
@@ -20,14 +22,9 @@ const Login = () => {
 
             <main className="w-full  h-full flex justify-between items-center">
 
+                <ImageGrid  />
 
-                <section className='bg-slate-700 grid w-2/6 h-full'>
-
-                    <img src='Images/ZenconLogo.svg' className="sm:h-[25rem]  md:h-[30rem] md:w-[30rem] h-[15rem] sm:w-[15rem] w-[15rem]" alt="" />
-
-                </section>
-
-                <section className='bg-slate-500 flex flex-col w-4/6 h-full'>
+                <section className='bg-slate-500 flex flex-col w-9/12 h-full'>
                     <nav className="py-4 px-5 flex gap-2 justify-end items-end h-fit w-fit overflow-y-hidden">
                     
                                     {navbarLinks.map((link, index) => (
@@ -59,8 +56,6 @@ const Login = () => {
                     </div>   
 
                 </section>
-
-
 
             </main>
         </>
