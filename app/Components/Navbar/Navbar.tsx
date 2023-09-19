@@ -8,9 +8,9 @@ export const Navbar = () => {
 
   
     const navbarLinks = [
-        { label: 'About', link: './../../Pages/About/' },
-        { label: 'Services', link: '../../Pages/About/StillInProgress' },
-        { label: 'Login', link: '../../Pages/About/StillInProgress' },
+        { label: 'About', link: './../../About/' },
+        { label: 'Services', link: '../../StillInProgress' },
+        { label: 'Login', link: '../../Login/' },
     ]
     
 
@@ -46,7 +46,7 @@ export const Navbar = () => {
                                     </Link>
                                     
                                 ))}
-                                <a href='../../Pages/About/StillInProgress' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
+                                <a href='../../StillInProgress' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
                                     Sign Up
                                 </a>
                             </div>
