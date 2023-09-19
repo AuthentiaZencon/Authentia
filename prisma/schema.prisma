@@ -21,14 +21,14 @@ model User {
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  authorId  Int
-
-  @@index([authorId])
+  id          Int      @id @default(autoincrement())
+  title       String
+  type        String
+  author      String
+  description String
+  url         String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Contract {
