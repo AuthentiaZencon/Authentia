@@ -20,3 +20,29 @@ body {
       monospace;
   }
   
+  .underline-animation {
+    position: relative;
+    transition: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .underline-animation::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    height: 2px;
+    width: 0%;
+
+  }
+  .underline-animation:hover::before {
+    content: '';
+    background-color: white;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    height: 2px;
+    width: 100%;
+  }

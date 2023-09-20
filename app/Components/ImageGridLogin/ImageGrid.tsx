@@ -8,7 +8,7 @@ export const ImageGrid = () => {
 
     <>
 
-        <section className='w-3/12 h-[100vh]  bg-slate-700 '>
+        <section className=' h-screen min-h-fit bg-slate-700 '>
 
             <div className='h-1/2 w-full flex flex-col sm:flex-row'>
                 <div className='h- w-1/2 flex flex-col  justify-center items-center text-xl md:text-2xl lg:text-3xl font-semibold text-left '>
