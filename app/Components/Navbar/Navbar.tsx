@@ -9,8 +9,8 @@ export const Navbar = () => {
   
     const navbarLinks = [
         { label: 'About', link: './../../About/' },
-        { label: 'Services', link: '../../StillInProgress' },
-        { label: 'Login', link: '../../Login/' },
+        // { label: 'Services', link: '../../StillInProgress' },
+        // { label: 'Login', link: '../../Login/' },
     ]
     
 
@@ -46,8 +46,8 @@ export const Navbar = () => {
                                     </Link>
                                     
                                 ))}
-                                <a href='../../StillInProgress' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
-                                    Sign Up
+                                <a href='./../dash/marketplace' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
+                                    Try it Out
                                 </a>
                             </div>
 
@@ -57,9 +57,11 @@ export const Navbar = () => {
                     
                 <section className='w-full h-full p-8 pt-[9%]' >
                     <div className='flex flex-col space-y-10'>
-                        <p className='text-white min-[310px]:text-3xl text-2xl sm:text-[2rem] font-semibold max-w-xs'>From ideas to immutable proof: your creative legacy, safeguarded forever.</p>
+                        <p className='text-white min-[310px]:text-3xl text-xl sm:text-[2rem] font-semibold max-w-xs'>From ideas to immutable proof: your creative legacy, safeguarded forever.</p>
                         {/* <a href='../../Pages/About/' className='bg-black rounded-full py-1 px-2 flex justify-center items-center  min-[310px]:px-4 text-white text-lg font-semibold hover:text-white cursor-pointer max-w-[8rem]'>Learn more</a> */}
-                        <Button className='justify-center items-center bg-black  py-1 px-2 flex rounded-full text-lg font-semibold max-w-[8rem]'>Learn more</Button>
+                        <Link href={'./../../About/'}>
+                            <Button className='justify-center items-center bg-black  py-1 px-2 flex rounded-full text-lg font-semibold max-w-[8rem]'>Learn more</Button>
+                        </Link>
                     </div>
 
                 </section>

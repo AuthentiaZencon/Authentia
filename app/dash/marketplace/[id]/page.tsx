@@ -88,7 +88,7 @@ export default function Marketplace ({ params }: { params : { id: string}}) {
 
                     <div className="flex flex-col w-full sm:w-1/2 h-full space-y-5 ">
                         <h2 className="text-xl">
-                            Lisence
+                        License
                         </h2>
                         <div className="flex-col  space-y-5">
                             <p> 

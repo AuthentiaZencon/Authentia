@@ -75,7 +75,7 @@ export const RegistrationForm = () => {
 
         <form className="w-full h-12 sm:px-20 mt-10" onSubmit={onSubmit}>
 
-            <h2 className="text-2xl">
+            <h2 className="text-xl sm:text-2xl">
                 Property Registration
             </h2>
             <span className="text-[#BEBEBE] block mt-4">
@@ -94,7 +94,7 @@ export const RegistrationForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-5 md:flex-row">
-                    <div className="w-full sm:w-1/2">
+                    <div className="w-full md:w-1/2">
                         <Label htmlFor="author">Author</Label>
                         <Input className="mt-4" name="author" placeholder="image author" 
                             value={registrationData.author}
@@ -103,7 +103,7 @@ export const RegistrationForm = () => {
                         />
                     </div>
 
-                    <div className="w-full sm:w-1/2">
+                    <div className="w-full md:w-1/2">
                         <Label htmlFor="type">Type of image</Label>
                         <Input className="mt-4" name="type" placeholder="nature" 
                             value={registrationData.type}
@@ -133,7 +133,7 @@ export const RegistrationForm = () => {
                         {...getRootProps()}
                     >
                         <input {...getInputProps()} />
-                        <p>
+                        <p className="text-sm sm:text-xl p-2">
                             <span className="text-[#D0AE66] mr-1 cursor-pointer">Upload file</span>
                             or drag and drop
                         </p>

@@ -16,7 +16,7 @@ export const Sidebar = () => {
     return(
         <nav className="w-full h-full flex flex-col justify-start items-center">
 
-            <Link href={'/dash/marketplace'} className="w-full h-11 mt-10 flex justify-center items-center" >
+            <Link href={'/'} className="w-full h-11 mt-10 flex justify-center items-center" >
                 <div className="flex items-center gap-4">
                                 
                                 <div
