@@ -6,7 +6,7 @@ export const ImageGrid = () => {
 
     <>
 
-        <section className='min-w-[300px] sm:w-3/12 sm:h-[100vh] sm:flex-col  bg-slate-700 flex '>
+        <section className='min-w-[300px] sm:w-3/12 sm:h-[100vh] sm:flex-col flex '>
 
             <div className='h-1/2 w-full flex flex-row'>
                 <div className='h- w-1/2 flex flex-col  justify-center items-center text-xl md:text-2xl lg:text-3xl font-semibold text-left '>
