@@ -3,23 +3,14 @@ import { useCallback, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { trpc } from "@/app/_trpc/client";
 import { Button } from '@/components/ui/button'
+import { useRouter } from "next/navigation";
 
 
 
 export default function Marketplace ({ params }: { params : { id: string}}) {
-    const data = [
-            {
-            title:"Imagen chida",
-            description:"Two elegant sports cars glide effortlessly along a tranquil avenue lined with tall trees. The winding road disappears into the distance, inviting an adventure filled with speed and luxury. A perfect setting for lovers of speed and natural beauty",
-            price:"$10",
-            agreements:"The buyer does NOT own the asset. The ownership and intellectual property rights of the image remain with the seller, and are not transferred to the buyer.",
-            licence:"For personal and professional use. You cannot resell or redistribute this image in their original or modified state. Read full license"},
-    ]
-    
     const id = params.id
     const getRegistration = trpc.getSingleRegistration.useQuery(Number(id))
-    console.log(getRegistration)
-    console.log(id)
+    const router = useRouter()
 
     return(
         <>
@@ -58,7 +49,11 @@ export default function Marketplace ({ params }: { params : { id: string}}) {
 
                                 <p className="text-white text-lg font-medium">${getRegistration.data?.id} USD</p>
 
-                                <Button className='justify-center items-center bg-[#D0AE66]  py-1 px-2 flex text-base  w-28'>Buy</Button>
+                                <Button className='justify-center items-center bg-[#D0AE66]  py-1 px-2 flex text-base  w-28'
+                                    onClick={() => router.push(`/dash/sign/${getRegistration.data?.id}`)}
+                                >
+                                    Buy
+                                </Button>
 
                             </div>
 
