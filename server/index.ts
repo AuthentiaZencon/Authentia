@@ -7,30 +7,26 @@ const primsa = new PrismaClient();
 // create out TRPC router that has our procedures on it
 export const appRouter = router({
 
-    registerUser: publicProcedures.input(z.object({
-        email:    z.string().email(),
-        name:     z.string(),
-        password: z.string().min(8).max(100),
-        country:  z.string(),
-        city:     z.string(),
-        phone:    z.string(),
-        sector:   z.string(),
+    getRegistrations: publicProcedures.query(async () => {
+        return await primsa.post.findMany();
+    }),
+    addRegistration: publicProcedures.input(z.object({
+        title: z.string(),
+        type:  z.string(),
+        author: z.string(),
+        description: z.string(),
+        url: z.string(),
     })).mutation(async (opts) => {
-
-        // password = await bcrypt.hash(opts.input.password, 10);
-        // const password = await bcrypt
-
-        await primsa.user.create({
+        const post = await primsa.post.create({
             data: {
-                email: opts.input.email,
-                name: opts.input.name,
-                password: opts.input.password,
-                country: opts.input.country,
-                city: opts.input.city,
-                phone: opts.input.phone,
-                sector: opts.input.sector,
+                title: opts.input.title,
+                type: opts.input.type,
+                author: opts.input.author,
+                description: opts.input.description,
+                url: opts.input.url,
             }
         })
+        return post;
     })
 
 })

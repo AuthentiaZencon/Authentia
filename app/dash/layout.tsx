@@ -1,4 +1,4 @@
-import { Sidebar } from "./register/components"
+import { Sidebar } from "./components"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 
@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Sidebar />
             </aside>
 
-            <aside className="w-full h-full pt-16 px-14">
+            <aside className="w-full h-full pt-16 px-14 overflow-y-auto">
                 {children}
             </aside>
 
