@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation"; 
 
 interface PostProps {
     title: string;
@@ -13,8 +14,12 @@ interface PostProps {
 
 export const Post = ({ post }: { post: PostProps }) => {
 
+    const router = useRouter()
+
     return (
-        <article className="w-full bg-[#111111] rounded-md px-3">
+        <article className="w-full bg-[#111111] rounded-md px-3 cursor-pointer"
+            onClick={ () => router.push(`/dash/marketplace/${post.id}`) }
+        >
             <div className="w-full h-80 backdrop-blur-sm ">
                 <img 
                     src={post.url}
