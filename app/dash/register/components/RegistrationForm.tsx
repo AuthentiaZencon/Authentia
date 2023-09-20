@@ -2,11 +2,18 @@
 import { useCallback, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from 'next/link'
 import { Textarea } from "@/components/ui/textarea";
 import { useDropzone } from 'react-dropzone';
 import { Button } from "@/components/ui/button";
 import { useMutation } from "@tanstack/react-query";
+import { InformationMessage } from "./InformationMessage";
 import { trpc } from "@/app/_trpc/client";
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+  } from "@/components/ui/hover-card"
 
 export const RegistrationForm = () => {
 
@@ -66,12 +73,12 @@ export const RegistrationForm = () => {
 
     return(
 
-        <form className="w-full h-12 px-20 mt-10" onSubmit={onSubmit}>
+        <form className="w-full h-12 sm:px-20 mt-10" onSubmit={onSubmit}>
 
-            <h2 className="text-3xl">
+            <h2 className="text-xl sm:text-2xl">
                 Property Registration
             </h2>
-            <span className="text-[#BEBEBE] block mt-2">
+            <span className="text-[#BEBEBE] block mt-4">
                 First, you will need to fill the data of your digital asset.
             </span>
 
@@ -79,7 +86,7 @@ export const RegistrationForm = () => {
 
                 <div>
                     <Label htmlFor="title">Asset title</Label>
-                    <Input name="title" placeholder="title" 
+                    <Input className="mt-4" name="title" placeholder="title" 
                         value={registrationData.title}
                         onChange={(e) => setRegistrationData({ ...registrationData, title: e.target.value })}
                         required
@@ -87,18 +94,18 @@ export const RegistrationForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-5 md:flex-row">
-                    <div className="w-1/2">
+                    <div className="w-full md:w-1/2">
                         <Label htmlFor="author">Author</Label>
-                        <Input name="author" placeholder="image author" 
+                        <Input className="mt-4" name="author" placeholder="image author" 
                             value={registrationData.author}
                             onChange={(e) => setRegistrationData({ ...registrationData, author: e.target.value })}
                             required
                         />
                     </div>
 
-                    <div className="w-1/2">
+                    <div className="w-full md:w-1/2">
                         <Label htmlFor="type">Type of image</Label>
-                        <Input name="type" placeholder="nature" 
+                        <Input className="mt-4" name="type" placeholder="nature" 
                             value={registrationData.type}
                             onChange={(e) => setRegistrationData({ ...registrationData, type: e.target.value })}
                             required
@@ -108,7 +115,7 @@ export const RegistrationForm = () => {
 
                 <div>
                     <Label htmlFor="description">Description</Label>
-                    <Textarea name="description" placeholder="description" rows={10}
+                    <Textarea className="mt-4" name="description" placeholder="description" rows={10}
                         value={registrationData.description}
                         onChange={(e) => setRegistrationData({ ...registrationData, description: e.target.value })}
                         required
@@ -116,12 +123,17 @@ export const RegistrationForm = () => {
                 </div>
 
                 <div>
-                    <Label>Upload file</Label>
-                    <div className="w-full h-36 border border-[#CBD5E1] rounded-md flex flex-col justify-center items-center text-[#929292]"
+                    <Label className="mr-2">Upload file</Label>
+
+                    <Link href='./FileTermsConditions' className="  rounded-full border-solid border-2 border-white py-1 px-2 text-white text-xs font-semibold hover:text-[#FDE4C3] hover:border-[#FDE4C3] cursor-pointer">
+                        ?
+                    </Link>
+
+                    <div className="mt-4 w-full h-36 border border-[#CBD5E1] rounded-md flex flex-col justify-center items-center text-[#929292]"
                         {...getRootProps()}
                     >
                         <input {...getInputProps()} />
-                        <p>
+                        <p className="text-sm sm:text-xl p-2">
                             <span className="text-[#D0AE66] mr-1 cursor-pointer">Upload file</span>
                             or drag and drop
                         </p>

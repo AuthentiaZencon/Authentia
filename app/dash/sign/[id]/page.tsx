@@ -16,7 +16,7 @@ export default function SignPage({ params }: { params : { id: string}}) {
                 First, you will need to fill the data of your digital asset.
             </span>
 
-            <section className="mt-10">
+            <section className="overflow-hidden mt-10">
                 <GeneratePDF id={id}/>
             </section>
 

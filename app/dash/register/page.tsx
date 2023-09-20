@@ -6,7 +6,7 @@ export default function UploadImage () {
         <>
             <article className="w-full text-white">
 
-                <h1 className="text-4xl font-medium">
+                <h1 className="text-2xl sm:text-4xl font-medium">
                     Register a property
                 </h1>
 
