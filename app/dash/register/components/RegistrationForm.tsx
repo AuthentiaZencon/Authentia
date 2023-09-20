@@ -71,6 +71,16 @@ export const RegistrationForm = () => {
         console.log(registrationData)
     }
 
+    if ( imageMutation.isLoading ) {
+        return (
+            <div className="w-full h-full text-white text-xl">
+                <p>
+                    Loading...
+                </p>
+            </div>
+        )
+    }
+
     return(
 
         <form className="w-full h-12 sm:px-20 mt-10" onSubmit={onSubmit}>

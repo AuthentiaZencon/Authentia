@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from 'next/navigation'
 
 const ROUTES = [
-    { id: 1, name: 'My Certificates', path: '/dash/certificates', icon: '/icons/certificates.svg' },
+    // { id: 1, name: 'My Certificates', path: '/dash/certificates', icon: '/icons/certificates.svg' },
     { id: 2, name: 'Register a property', path: '/dash/register', icon: '/icons/register.svg' },
     { id: 3, name: 'Marketplace', path: '/dash/marketplace', icon: '/icons/market.svg' },
 ]

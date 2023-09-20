@@ -18,7 +18,7 @@ export default function ContractPage() {
             </p>
 
             <div className="w-full flex justify-start items-center my-3">
-                <a href="https://res.cloudinary.com/dbp8jxvfi/image/upload/v1695161479/journal/ruvfipkaapahmjyuhnap.jpg" download>
+                <a href="https://res.cloudinary.com/dbp8jxvfi/image/upload/v1695214928/journal/f3b3juhbadhm7ouu7c1w.jpg" download>
                     <Button className="bg-[#D0AE66] w-48">
                         Download image
                     </Button>
