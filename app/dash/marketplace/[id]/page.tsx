@@ -59,7 +59,7 @@ export default function Marketplace ({ params }: { params : { id: string}}) {
                                 <p className="text-white text-lg font-medium">${getRegistration.data?.id} USD</p>
 
                                 <Button className='justify-center items-center bg-[#D0AE66]  py-1 px-2 flex text-base  w-28'>Buy</Button>
-
+ 
                             </div>
 
                             <hr className="w-full bg-white mt-5"/>
