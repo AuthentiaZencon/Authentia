@@ -47,7 +47,7 @@ export default function Marketplace ({ params }: { params : { id: string}}) {
 
                             <div className="flex space-x-7 w-full h-full items-end justify-end mt-5">
 
-                                <p className="text-white text-lg font-medium">${getRegistration.data?.id} USD</p>
+                                <p className="text-white text-lg font-medium">$10 USD</p>
 
                                 <Button className='justify-center items-center bg-[#D0AE66]  py-1 px-2 flex text-base  w-28'
                                     onClick={() => router.push(`/dash/sign/${getRegistration.data?.id}`)}
