@@ -8,8 +8,8 @@ export const GeneralNavbar = () => {
   
     const navbarLinks = [
         { label: 'About', link: './../../About/' },
-        { label: 'Services', link: '../../StillInProgress' },
-        { label: 'Login', link: '../../Login/' },
+        // { label: 'Services', link: '../../StillInProgress' },
+        // { label: 'Login', link: '../../Login/' },
     ]
 
     return (
@@ -26,7 +26,7 @@ export const GeneralNavbar = () => {
                         </Link>
 
                         <div className="grande flex gap-10 justify-center items-center">
-                            {navbarLinks.map((link, index) => (
+                            {/* {navbarLinks.map((link, index) => (
                                 <Link
                                 href={link.link}
 
@@ -36,9 +36,9 @@ export const GeneralNavbar = () => {
                                 {link.label}
                                 </Link>
                                 
-                            ))}
-                            <Link href='/StillInProgress' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
-                                Sign Up
+                            ))} */}
+                            <Link href='./../dash/marketplace' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
+                                Try It Out
                             </Link>
 
                         </div>
