@@ -1,7 +1,16 @@
 import './../../Styles/Navbar.css'
 import React from 'react';
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import {
+    Menubar,
+    MenubarContent,
+    MenubarItem,
+    MenubarMenu,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarTrigger,
+  } from "@/components/ui/menubar"
+  
 
 export const GeneralNavbar = () => {
 
@@ -37,9 +46,23 @@ export const GeneralNavbar = () => {
                                 </Link>
                                 
                             ))} */}
-                            <Link href='./../dash/marketplace' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
+                            <Link href='./../dash/marketplace' className="bg-white  hidden sm:block rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
                                 Try It Out
                             </Link>
+
+                            <Menubar className='overflow-hidden block sm:hidden'>
+                                <MenubarMenu>
+                                    <MenubarTrigger className='w-8 p-0'><img className='w-8 h-8' src='/Images/cardapio.png'></img></MenubarTrigger>
+                                    <MenubarContent>
+                                    <MenubarItem>
+                                    <a href='./../dash/marketplace' className="">
+                                    Try it Out
+                                    </a>
+                                    </MenubarItem>
+                               
+                                    </MenubarContent>
+                                </MenubarMenu>
+                            </Menubar>
 
                         </div>
 

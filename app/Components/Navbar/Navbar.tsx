@@ -2,7 +2,16 @@ import './../../Styles/Navbar.css'
 import React from 'react';
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-
+import {
+    Menubar,
+    MenubarContent,
+    MenubarItem,
+    MenubarMenu,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarTrigger,
+  } from "@/components/ui/menubar"
+  
 
 export const Navbar = () => {
 
@@ -30,11 +39,13 @@ export const Navbar = () => {
                                     >
                                     <img className='text-sm' alt="Logo " src="/Images/AuthentiaLogo.svg" />
                                 </div>
-                                <p className='text-[#E2E2E2] text-3xl'>Authentia</p>
+                                <p className='text-[#E2E2E2] text-3xl  hidden min-[350px]:block'>Authentia</p>
 
                             </div>
 
                             <div className="grande flex gap-10 justify-center items-center">
+
+                                <div className=' hidden sm:block'>
                                 {navbarLinks.map((link, index) => (
                                     <Link
                                     href={link.link}
@@ -46,10 +57,33 @@ export const Navbar = () => {
                                     </Link>
                                     
                                 ))}
-                                <a href='./../dash/marketplace' className="bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
+
+                            </div>
+                                <a href='./../dash/marketplace' className=" hidden sm:block bg-white  rounded-md py-1 px-4 text-black text-lg font-semibold hover:bg-[#FDE4C3] cursor-pointer">
                                     Try it Out
                                 </a>
+
                             </div>
+
+                            
+                            <Menubar className='overflow-hidden block sm:hidden'>
+                                <MenubarMenu>
+                                    <MenubarTrigger className='w-8 p-0'><img className='w-8 h-8' src='/Images/cardapio.png'></img></MenubarTrigger>
+                                    <MenubarContent>
+                                    <MenubarItem>
+                                       <Link href={'./../../About/'}> About </Link>
+                                    </MenubarItem>
+                                    <MenubarItem>
+                                    <a href='./../dash/marketplace' className="">
+                                    Try it Out
+                                    </a>
+                                    </MenubarItem>
+                               
+                                    </MenubarContent>
+                                </MenubarMenu>
+                            </Menubar>
+
+
 
                         </div>
                         
