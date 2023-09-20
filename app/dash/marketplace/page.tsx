@@ -21,7 +21,7 @@ export default function MarketplacePage() {
             </section>
 
             <div className="w-full flex items-center min-[330px]:pl-10 h-64 mt-10 rounded-md bg-[url('/Images/imagen_marketplace_banner.svg')] bg-cover bg-center" >
-                <p className='text-white p-2 text-sm min-[310px]:text-xl text-lg sm:text-2xl font-semibold max-w-xs'>Empower your creativity with Blockchain: your intellectual property, your rules.</p>
+                <p className='text-white p-2 min-[310px]:text-xl text-lg sm:text-2xl font-semibold max-w-xs'>Empower your creativity with Blockchain: your intellectual property, your rules.</p>
             </div>
 
             <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
