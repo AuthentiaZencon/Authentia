@@ -18,7 +18,7 @@ export const Sidebar = () => {
 
             <div className="w-full h-11 bg-pink-500 mt-10" />
 
-            <ul className="mt-14 flex flex-col gap-9 w-full">
+            <ul className="mt-14 flex flex-col gap-5 w-full">
                 {
                     ROUTES.map((route) => (
                         <li key={route.id} className={`text-xl px-4 py-2 flex justify-start items-center gap-4 text-[#B0B0B0] ${ pathname === route.path ? 'bg-[#2C2C2C] text-white border-r-4 border-[#A19165]' : '' } `}>

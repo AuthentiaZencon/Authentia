@@ -14,7 +14,7 @@ interface PostProps {
 export const Post = ({ post }: { post: PostProps }) => {
 
     return (
-        <article className="w-full bg-[#111111]">
+        <article className="w-full bg-[#111111] rounded-md px-3">
             <div className="w-full h-80 backdrop-blur-sm ">
                 <img 
                     src={post.url}
@@ -23,7 +23,7 @@ export const Post = ({ post }: { post: PostProps }) => {
                 />
             </div>
 
-            <div className="w-full flex flex-row justify-center items-center px-3 py-2">
+            <div className="w-full flex flex-row justify-center items-center py-2">
                 <div className="w-1/2">
                     <h1 className="text-2xl font-medium">
                         { 
